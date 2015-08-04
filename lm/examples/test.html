@@ -1,0 +1,90 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" type="text/css" href="mystyle.css">
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script> 
+
+
+
+</head>
+
+
+
+
+<script language="JavaScript" type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+<script type="text/javascript">
+
+var maxImage = 100;//100 can be changed as max number of image change
+
+function load(pos) {
+	if (pos <= maxImage){ 
+		for (var i = pos; i < pos+6; i++) { 
+			if (i <= maxImage){
+				var variableToSend = ""+i;
+				
+				
+				var getdata = '';
+				$.post( 
+                  "database.php",
+                  { variable: variableToSend },
+				 
+                  function(data) {
+                     getdata = data;
+					 //$("#container").append('<img src="'+getdata+'"  class="myimage"  />');
+					 $("#container").append('<a class="myimage" href="'+getdata+'" data-lightbox="piture1"><img class="myimage" src="'+getdata+'" alt="image-1" /></a>');
+                  }
+               );
+				
+			}
+	
+		}
+		localStorage.setItem('pos', (pos+6).toString());
+	}
+}
+
+$(function() {
+	localStorage.setItem('pos', '1');
+	load(1);
+
+	window.onscroll = function() {
+		if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
+			load(parseInt(localStorage.getItem('pos')));
+		}
+
+	};
+	window.onscroll();
+	window.onscroll();
+	window.onscroll();
+
+});
+</script>
+
+<script>
+  (function() {
+    var cx = '017085084134616890852:muus2r741lg';
+    var gcse = document.createElement('script');
+    gcse.type = 'text/javascript';
+    gcse.async = true;
+    gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+        '//cse.google.com/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gcse, s);
+  })();
+</script>
+<gcse:search></gcse:search>
+
+<div align="center">
+
+<img  src="logo.jpg" class= "center" alt="HTML5 Icon" />
+</div>
+<body bgcolor="#FFFFFF">
+<script src="../dist/js/lightbox-plus-jquery.min.js"></script>
+
+<div id="container" ></div>
+ 
+</body>
+</html>

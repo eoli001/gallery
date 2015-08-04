@@ -1,0 +1,47 @@
+.center {
+		
+		width:6%;
+		padding: 5px;
+		margin-bottom: 3%;
+		margin-top: 1%;
+		background-color: #000000
+}
+.login{
+	margin-right: 1%;
+	margin-top: 2%;
+	padding:3px;
+}	
+
+.popupimg{
+	width:70%;
+	padding: 5px;
+	margin-bottom: 3%;
+	margin-top: 1%;
+	background-color: #000000
+	
+}
+
+@media only screen and (min-width: 841px) {
+	.myimage {
+		width: 27%;
+		margin: 1%;
+		padding: 4px;
+		border-radius: 15px;
+	}
+}
+@media only screen and (min-width: 421px) and (max-width: 840px) {
+	.myimage {
+		width: 41.5%;
+		margin: 1%;
+		padding: 4px;
+		border-radius: 15px;
+	}
+}
+@media only screen and (min-width: 200px) and (max-width: 420px) {
+	.myimage {
+		width: 98%;
+		margin: 1%;
+		padding: 4px;
+		border-radius: 15px;
+	}
+}

@@ -1,0 +1,198 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" type="text/css" href="mystyle.css">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script> 
+ 
+ <style type="text/css">
+    div.gsc-control-cse form.gsc-search-box {
+      width: 20%;
+	  position: absolute;
+	  right: 8px;
+    }
+  </style>
+
+
+</head>
+
+<script language="JavaScript" type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+<script type="text/javascript">
+
+var maxImage = 100;//100 can be changed as max number of image change
+
+function load(pos) {
+	//var usnm = window.opener.thisIsAnObject;
+	
+	if (pos <= maxImage){ 
+		for (var i = pos; i < pos+6; i++) { 
+			if (i <= maxImage){
+				var variableToSend = ""+i;
+				
+				
+				var getdata = '';
+				$.post( 
+                  "database.php",
+                  { variable: variableToSend },
+				 
+                  function(data) {
+                     getdata = data;
+					 //$("#container").append('<img src="'+getdata+'"  class="myimage"  />');
+					 $("#container").append('<a class="myimage" href="'+getdata+'" data-lightbox="piture1"><img class="myimage" src="'+getdata+'" alt="image-1" /></a>');
+                  }
+               );
+				
+			}
+	
+		}
+		localStorage.setItem('pos', (pos+6).toString());
+	}
+}
+
+$(function() {
+	var wel = sessionStorage.getItem("theuser");
+	$("#user").append(wel);
+	localStorage.setItem('pos', '1');
+	load(1);
+
+	window.onscroll = function() {
+		if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
+			load(parseInt(localStorage.getItem('pos')));
+		}
+
+	};
+	window.onscroll();
+	window.onscroll();
+	window.onscroll();
+
+});
+</script>
+
+<script>
+function logout() {
+    window.open('index.html', "_self");
+}
+</script>
+
+
+<script>
+  (function() {
+    var cx = '017085084134616890852:muus2r741lg';
+    var gcse = document.createElement('script');
+    gcse.type = 'text/javascript';
+    gcse.async = true;
+    gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+        '//cse.google.com/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gcse, s);
+  })();
+</script>
+<gcse:search></gcse:search>
+
+<!--<script>
+$('#uploadFile').submit(function()
+{
+  event.preventDefault();
+  $("#updiv").fadeOut();
+  $.ajax(
+  { 
+    url: "upload.php",
+    type: 'POST',
+    data: new FormData(this),
+    contentType: false,
+    processData: false,
+    success: function(data)
+    {
+      $('.info').html(data);    
+      $('.info').show();    
+      $("#updiv").fadeIn();
+    }
+  });
+
+});
+</script>-->
+
+<div class="userwelcome">
+<div  id= "welcome" align="center" class = "welcome">Welcome, </div >
+
+<div id= "user" class = "welcome"></div>
+
+<button class="signout" onclick="logout()" class = "welcome">Sign Out</button>
+
+<form id="uploadFile" action="upload.php" method="post" class = "welcome"
+enctype="multipart/form-data" target="resultFrame">
+<label for="file">Filename:</label>
+<input type="file" name="fileToUpload" id="fileToUpload">
+<input type="submit" name="submit" value="Submit">
+</form>
+<div class="info" style="display:none"></div>
+
+</div>
+
+
+
+
+ <!--<form id="uploadFile" enctype="multipart/form-data">
+    <h3>Upload a file:</h3>
+    <input type="file" name="fileToUpload" id="fileToUpload">
+    <input type="submit" id="submit" value="Upload" name="submit">
+  </form>
+  <!-- Response Output -->
+ <!-- <div class="info" style="display:none"></div>
+</div>
+
+<div id="updiv">
+<form id="uploadFile" enctype="multipart/form-data">
+<h3>Upload a file:</h3>
+<input type="file" name="fileToUpload" id="fileToUpload">
+<input type="submit" id="submit" value="Upload" name="submit">
+</form>
+
+<!-- Response Output -->
+
+</div>
+
+<script>
+$('#uploadFile').submit(function()
+{
+  event.preventDefault();
+  $("#updiv").fadeOut();
+  $.ajax(
+  { 
+    url: "upload.php",
+    type: 'POST',
+    data: new FormData(this),
+    contentType: false,
+    processData: false,
+    success: function(data)
+    {
+      $('.info').html(data);    
+      $('.info').show();    
+      $("#updiv").fadeIn();
+    }
+  });
+
+});
+</script>
+
+<div id="header" align="center" class="headerlogo">
+
+<img  src="logo.jpg" class= "center" alt="HTML5 Icon" />
+<img  src="account.png" class= "center"/>
+</div>
+<body bgcolor="#FFFFFF">
+
+<!--<script src="../test/js/lightbox-plus-jquery.min.js"></script>-->
+
+<div id="container" align="center" ></div>
+
+<div id="footer">
+Enjoy your gallery tour!
+</div>
+ 
+</body>
+</html>

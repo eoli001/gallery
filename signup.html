@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="mystyle.css">
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script> 
+
+</head>
+
+<script language="JavaScript" type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+<div align="center">
+
+<img  src="logo.jpg" class= "center" alt="HTML5 Icon" />
+</div>
+<body bgcolor="#FFFFFF">
+
+<h1 align="center">Welcome to Bearberry Gallery</h1>
+<h1 align="center">Sign Up Page</h1>
+
+<form id="registerform" width="100%" name="login" bgcolor="#FFFFFF"  type= "text-align:center">
+ Username <br>  <input type="text" name="userid" class ="login"/> <br><br>
+ Password <br> <input type="password" name="pswrd" class ="login"/> <br><br>
+<input type="button" onclick="register(this.form)" value="Get the Account Now!"/>
+<input type="reset" value="Cancel"/>
+</form>
+
+<script language="javascript">
+    function register(form) {
+		$.post( 
+                  "userdatabase.php",
+                  { username: form.userid.value, password:  form.pswrd.value},
+				 
+                  function(data) {
+					if(data == "Successfully"){
+						alert("The account has been successfully created.")
+						window.open('index.html',"_self");
+					}
+                    else{
+						alert("The user name has already exist.")
+					}
+                  }
+               );
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,157 @@
+#header {
+	clear:both;
+    background-color:black;
+	margin-top:25px;
+    padding:5px;
+}
+
+#footer {
+    background-color:black;
+    color:white;
+    clear:both;
+    text-align:center;
+   padding:5px;	 	 
+}
+
+#content {
+    width: 960px;
+    margin: 0 auto;
+	text-align:center;
+}
+
+#registerform {
+    width: 960px;
+    margin: 0 auto;
+	text-align:center;
+}
+
+
+.centerlogo {
+		width:7%;
+		margin: 1%;
+		padding: 3px;
+		background-color: #000000
+}
+.login{
+	margin-right: 1%;
+	margin-top: 2%;
+	padding:3px;
+}
+
+.userwelcome{
+	padding: 2px;
+}
+
+.siderbar{
+	margin:1%;
+	height:50px;
+	background-color:blue;
+}
+
+.startpage{
+	float:left;
+	margin-left: 5px;
+	margin-right:5px;
+}
+
+.user{
+	float:left;
+	margin-left: 5px;
+	margin-bottom:45px;
+}
+
+.signout{
+	float:left;
+	margin-left: 10px;
+	margin-right:5px;
+	
+}
+
+.popupimg{
+	height:50%;
+	margin-bottom: 3%;
+	margin-top: 1%;
+	
+}
+
+.navigationbar a.navcontent:hover, a.navcontent:active{
+	background-color: #660033;
+}
+.navigationbar a.navcontent:link, a.navcontent:visited{
+	display: inline-block;
+    width: 90px;
+    font-weight: bold;
+    color: #FFFFFF;
+	margin-left:20px;
+    background-color: #767681;
+	text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+
+.navlogo{
+    height: 40px;
+	display:inline-block;
+	vertical-align: middle;
+	float:left;
+	margin-top:-10px;
+}
+.companyinfo{
+	margin-right:10px;
+}
+.navcompany{
+	float:left;
+    width: 120px;
+    font-weight: bold;
+    color: #FFFFFF;
+	margin-top:0px;
+	margin-right:10px;
+	text-decoration: none;
+    text-transform: uppercase;
+}
+.navigationbar li{
+	float:left;
+}
+
+.navigationbar ul{
+	list-style-type: none;
+	margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+.navigationbar{
+	clear:both;
+    background-color:black;
+	margin-top:25px;
+	margin-right:10px;
+	padding:15px;
+}
+
+.container{
+	margin-top:5px;
+}
+
+@media only screen and (min-width: 871px) {
+	.myimage {
+		width: 29%;
+		margin: 1%;
+		margin-top: 20px;
+		border-radius: 15px;
+	}
+}
+@media only screen and (min-width: 500px) and (max-width: 870px) {
+	.myimage {
+		width: 46%;
+		margin: 1%;
+		border-radius: 15px;
+	}
+}
+@media only screen and (min-width: 0px) and (max-width: 499px) {
+	.myimage {
+		width: 90%;
+		margin: 1%;
+		border-radius: 15px;
+		
+	}
+}
