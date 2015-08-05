@@ -83,4 +83,6 @@ add accordion
 add register and log in
 
 
-
+beautiful wine red: #660033
+beautiful green:#008A00
+beautiful purple red:#A3007A

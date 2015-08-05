@@ -20,14 +20,14 @@ if(session_id() == '') {
 
 <script language="JavaScript" type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 
-<div align="center">
+<div align="center" id="header">
 
-<img  src="logo.jpg" class= "center" alt="HTML5 Icon" />
+<img  src="logo.jpg" class= "centerlogo" alt="HTML5 Icon" />
 </div>
 <body bgcolor="#FFFFFF">
 
 <h1 align="center">Welcome to Bearberry Gallery</h1>
-<h1 align="center">Please login</h1>
+<h2 align="center">Please login</h2>
 <form id="content" width="100%" name="login" bgcolor="#FFFFFF" style="text-align:center">
  Username<br><input type="text" name="userid" class ="login"/><br><br>
  Password<br><input type="password" name="pswrd" class ="login"/><br><br>

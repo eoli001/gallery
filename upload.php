@@ -12,7 +12,7 @@ $uploadOk = 1;
 $notempty = 1;
 $message="";
 $reloadpage = "false";
-$space=" ";
+$space="  ";
 $imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
 // Check if image file is a actual image or fake image
 if(isset($_POST["submit"])) {
@@ -85,8 +85,8 @@ echo $reloadpage != "true";
 if($reloadpage == "true"){
 		//echo "<script>location.reload();</script>";
 		echo "<script>var d = new Date();";
-		echo "$('#profileimage').attr('src','/test/profilepictures/", basename( $_FILES["fileToUpload"]["name"]),"?",time(),"');</script>";
-		echo "<script> $('#logo').attr('src','account.png');</script>";
+		echo "$('#profileimg').attr('src','/test/profilepictures/", basename( $_FILES["fileToUpload"]["name"]),"?",time(),"');</script>";
+		//echo "<script> $('#logo').attr('src','account.png');</script>";
 }
 
 }

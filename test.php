@@ -119,85 +119,12 @@ function logout() {
 
 <button class="signout" onclick="logout()" class = "startpage">Sign Out</button>
 
-<form id="uploadFile" action="upload.php" method="post" class = "startpage"
-enctype="multipart/form-data" target="resultFrame">
-<label for="file">Filename:</label>
-<input type="file" name="fileToUpload" id="fileToUpload">
-<input type="submit" name="submit" value="Submit">
-</form>
-<div class="putresult" style="display:none"></div>
 <div style="float:left; margin-top:-20px"><gcse:search></gcse:search></div>
 </div>
 
 
 </div>
 
-<script>
-$('#uploadFile').submit(function()
-{
-  event.preventDefault();
-  $("#updiv").fadeOut();
-  $.ajax(
-  { 
-    url: "upload.php",
-    type: 'POST',
-    data: new FormData(this),
-    contentType: false,
-    processData: false,
-    success: function(data)
-    {
-      $('.putresult').html(data);    
-      $('.putresult').show();    
-      $("#updiv").fadeIn();
-    }
-  });
-
-});
-
-
-</script>
-
-<!--<div id="header" align="center" >
-
-<img id ="logo"  src="logo.jpg" class= "centerlogo" alt="HTML5 Icon" />-->
-
-<?php  //set profileimage, if no record in database,set to account.png.
-/*$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "mydb";
-
-// Create connection
-$conn = new mysqli($servername, $username, $password, $dbname);
-// Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-} 
-$sql = "SELECT profileimage FROM myusers WHERE username =".$_SESSION["username"];
-$result = $conn->query($sql);
-
-
-if ($result->num_rows > 0) {
-    // output data of each row
-    //($row = $result->fetch_assoc()) {
-		$row = $result->fetch_assoc();
-		$rowprofileimgscr = $row["profileimage"];
-		if(!empty($rowprofileimgscr)){
-		//echo json_encode(array("value" => "".$rowimgscr));
-		echo '<img id="profileimage"  src="/test/profilepictures/'.$rowprofileimgscr.'" class= "centerlogo"/>';
-		//print("<img id = '".$rowid. "'"."class='myimage' src='".$rowimgscr."'"."alt='Mountain View' style='' />");
-		}
-		else{
-			echo '<img id="profileimage"  src="account.png" class= "centerlogo"/>';
-		}
-} else {
-		echo "0 results";
-}*/
-?>
-
-<!--<img  src="account.png" class= "center"/>-->
-</div>
-<!--<script> $('#logo').attr('src','account.png');</script>-->
 <body bgcolor="#FFFFFF">
 
 <!--<script src="../test/js/lightbox-plus-jquery.min.js"></script>-->
@@ -249,12 +176,12 @@ if ($result->num_rows > 0) {
 
 <div class="navigationbar" >
 <img class= "navlogo"  id ="logo"  src="logo.jpg" alt="HTML5 Icon" />
-<p class= "navcompany" align="center"> Bearberry </p>
+<p class= "navcompany" align="center"> Bearberry Gallery</p>
 <ul>
   <!--<li><img align="left" id ="logo"  src="logo.jpg" alt="HTML5 Icon" /><p> Bearberry </p></li>-->
   <li><a class="navcontent" href="#home">Home</a></li>
-  <li><a class="navcontent" href="#news">Profile</a></li>
-  <li><a class="navcontent" href="#contact">Contact</a></li>
+  <li><a class="navcontent" href="/profile.php">Profile</a></li>
+  <li><a class="navcontent" href="/artist.php">Artist</a></li>
   <li><a class="navcontent" href="#about">About</a></li>
 </ul>
 </div>
