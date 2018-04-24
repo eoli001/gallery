@@ -1,5 +1,6 @@
 #header {
 	clear:both;
+	margin:0.5%;
     background-color:#464646;
     padding:1px;
 }
@@ -30,12 +31,24 @@
 		background-color: #000000
 }
 
+.paitingframe{
+	width:24%;
+	border-radius: 15px;
+}
+.paitingbackground{
+	width:98%;
+}
+
 .login{
 	margin-right: 1%;
-	margin-top: 2%;
+	margin-top: 10px;
+	color: #464646;
 	padding:3px;
 }
 
+.formcontent{
+	margin-top:25px;
+}
 .userwelcome{
 	padding: 2px;
 }
@@ -85,6 +98,16 @@
 	margin-right:5px;
 	
 }
+.uploadbutton{
+	color:#FFF1FF;
+	background-color:#464646;
+	
+}
+
+.loginbutton{
+	color:#FFF1FF;
+	background-color:#464646;
+}
 
 .popupimg{
 	height:50%;
@@ -94,6 +117,8 @@
 }
 .bibimageframe{
 	height:110px;
+	margin-bottom:10px;
+	margin-left:5px;
 }
 
 .bibdetail{
@@ -110,17 +135,28 @@
 }
 .navigationbar a.navcontent:link, a.navcontent:visited{
 	display: inline-block;
-    width: 90px;
+    width:95px;
     font-weight: bold;
     color: #FFFFFF;
 	border-radius: 1px;
-	margin-left:20px;
     text-align: center;
     text-decoration: none;
     text-transform: uppercase;
 }
-
-
+.meprofileimage{
+	width:140px;
+	margin-right:5px;
+	margin-bottom:10px;
+}
+.meprofiledetail{
+	display:inline-block;
+	margin-top:0px;
+	width:80%;
+	height:130px;
+	padding:5px;
+	color:white;
+	background-color:#353230;
+}
 .navlogo{
     height: 40px;
 	display:inline-block;

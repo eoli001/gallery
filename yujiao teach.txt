@@ -82,7 +82,13 @@ add search bar
 add accordion
 add register and log in
 
-
 beautiful wine red: #660033
 beautiful green:#008A00
 beautiful purple red:#A3007A
+
+
+mysql:databasestuff:(create,drop database)
+https://www.digitalocean.com/community/tutorials/a-basic-mysql-tutorial
+
+how to dump sql file to database
+http://www.cyberciti.biz/faq/import-mysql-dumpfile-sql-datafile-into-my-database/

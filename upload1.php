@@ -6,8 +6,9 @@ if(session_id() == '') {
 ?>
 
 <?php
-$target_dir = "/wamp/www/test/profilepictures/";
+$target_dir = __DIR__ ."/test/profilepictures/";
 $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
+//echo $target_file;
 $uploadOk = 1;
 $notempty = 1;
 $message="";
@@ -67,7 +68,7 @@ if ($uploadOk == 0) {
 	//echo "<script type='text/javascript'>alert('$message');</script>";
 // if everything is ok, try to upload file
 } else {
-	//echo $_FILES["fileToUpload"]["tmp_name"];
+     //echo $_FILES["fileToUpload"]["tmp_name"];
 	//echo $target_file;
     if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
 		$message = $message.$space."The file ". basename( $_FILES["fileToUpload"]["name"]). " has been uploaded.";

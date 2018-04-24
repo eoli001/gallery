@@ -16,7 +16,7 @@ if(session_id() == '') {
 <!-- Latest compiled and minified CSS -->
 
 <link rel="stylesheet" href="../bootstrap.css">
-<!--<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"> -->
+<!--<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">-->
 <!-- jQuery library -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 
@@ -56,7 +56,7 @@ function load(pos) {
                   { variable: variableToSend },
 				 
                   function(data) {
-                     getdata = data;
+                     getdata = data.replace(/(\r\n|\n|\r)/gm,"").trim();
 					 //$("#container").append('<img src="'+getdata+'"  class="myimage"  />');
 					 $("#container").append('<a class="myimage" href="'+getdata+'" data-lightbox="piture1"><img class="myimage" src="'+getdata+'" alt="image-1" /></a>');
                   }
@@ -91,9 +91,22 @@ $(function() {
 });
 </script>
 
-<script>
+<script type="text/javascript">
 function logout() {
-    window.open('index.php', "_self");
+	$.post( 
+        "destroysession.php",
+        { sessionstatus: "off" },
+        function(data) {
+			var getdata=data.replace(/(\r\n|\n|\r)/gm,"").trim();
+			if(getdata == "destroyed"){
+				alert("You have successfully loged out.");
+				window.open('index.php', "_self");
+			
+			}
+			
+        }
+    );
+    
 }
 </script>
 
@@ -113,11 +126,11 @@ function logout() {
 
 
 <div class="userwelcome">
-<div  id= "welcome" align="center" class = "startpage">Welcome, </div >
+<div  id= "welcome" style="font-family:sans-serif" align="center" class = "startpage">Welcome, </div >
 
-<div id= "user" class = "startpage"></div>
+<div id= "user" style="font-family:sans-serif" class = "startpage"></div>
 
-<button class="signout" onclick="logout()" class = "startpage">Sign Out</button>
+<button class="signout" onclick="logout()" style="font-family:sans-serif" class = "startpage">Sign Out</button>
 
 <div style="float:left; margin-top:-20px"><gcse:search></gcse:search></div>
 </div>
@@ -129,6 +142,26 @@ function logout() {
 
 <!--<script src="../test/js/lightbox-plus-jquery.min.js"></script>-->
 
+
+
+<div class="navigationbar" >
+<img class= "navlogo"  id ="logo"  src="logo.jpg" alt="HTML5 Icon" />
+<p class= "navcompany" style="font-family:sans-serif" align="center"> Bearberry Gallery</p>
+<ul>
+  <!--<li><img align="left" id ="logo"  src="logo.jpg" alt="HTML5 Icon" /><p> Bearberry </p></li>-->
+  <li><a class="navcontent" style="font-family:sans-serif" href="/test.php">Home</a></li>
+  <li><a class="navcontent" style="font-family:sans-serif" href="/profile.php">Profile</a></li>
+  <li><a class="navcontent" style="font-family:sans-serif" href="/artist.php">Artist</a></li>
+  <li><a class="navcontent" style="font-family:sans-serif" href="/aboutme.php">About me</a></li>
+</ul>
+</div>
+<?php
+
+	
+	//$message = "".window.innerwidth;
+	//echo "<script type='text/javascript'>alert('$message');</script>";
+
+?>
 <!--<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
   <div class="panel panel-default">
     <div class="panel-heading" role="tab" id="headingOne">
@@ -173,18 +206,6 @@ function logout() {
     </div>
   </div>
 </div>-->
-
-<div class="navigationbar" >
-<img class= "navlogo"  id ="logo"  src="logo.jpg" alt="HTML5 Icon" />
-<p class= "navcompany" align="center"> Bearberry Gallery</p>
-<ul>
-  <!--<li><img align="left" id ="logo"  src="logo.jpg" alt="HTML5 Icon" /><p> Bearberry </p></li>-->
-  <li><a class="navcontent" href="#home">Home</a></li>
-  <li><a class="navcontent" href="/profile.php">Profile</a></li>
-  <li><a class="navcontent" href="/artist.php">Artist</a></li>
-  <li><a class="navcontent" href="#about">About</a></li>
-</ul>
-</div>
 
 <div id="container" class="container" align="center" ></div>
 
