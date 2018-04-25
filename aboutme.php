@@ -108,7 +108,7 @@ Trying to build a professional website using PHP, Javascript, CSS, and HTML. <br
 Aim to be a full stack developer.
 </p>
 </p>
-<h2 style="font-family:sans-serif">My Paingtings</h2>
+<h2 style="font-family:sans-serif">My Paintings</h2>
 
 <div class="paitingbackground" bgcolor="#464646">
 <a class="paitingframe" href="/mypaintings/mp1.JPG" data-lightbox="piture1"><img class="paitingframe" src="/mypaintings/mp1.JPG" alt="image-1" /></a>
